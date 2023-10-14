@@ -30,6 +30,7 @@
     <string name="pkg_button6">"Choose Solo Seat"</string>
     <string name="pkg_button7">"Select Swivel Chair"</string>
     <array name="stasiun">
+        <item>Select Station</item>
         <item>Yogyakarta</item>
         <item>Lempuyangan</item>
         <item>Brambanan</item>
@@ -42,6 +43,7 @@
         <item>Solo Balapan</item>
     </array>
     <array name="class_train">
+        <item>Select Class</item>
         <item>Economy</item>
         <item>Bussiness</item>
         <item>Executive</item>

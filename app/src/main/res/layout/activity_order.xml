@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp">
+    android:padding="30dp"
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/textView"
@@ -12,43 +13,59 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/order"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/soft_black"/>
 
     <Spinner
         android:id="@+id/asal_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:background="@drawable/edittext"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="10dp" />
 
     <Spinner
         android:id="@+id/tujuan_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/asal_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/asal_spinner"
+        android:background="@drawable/edittext"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="10dp" />
 
     <Spinner
         android:id="@+id/class_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tujuan_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/tujuan_spinner"
+        android:background="@drawable/edittext"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="10dp"/>
 
     <EditText
         android:id="@+id/orderdate_input"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="@string/order_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/class_spinner"
+        android:background="@drawable/edittext"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="12dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="15dp"
+
         />
 
     <HorizontalScrollView
@@ -57,7 +74,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/orderdate_input">
+        app:layout_constraintTop_toBottomOf="@id/orderdate_input"
+        android:layout_marginTop="30dp">
 
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -68,52 +86,73 @@
             <Button
                 android:id="@+id/pkg_button1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="@string/pkg_button1"
                 android:background="@drawable/pkgbutton_selector"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"
                 />
 
             <Button
                 android:id="@+id/pkg_button2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="@string/pkg_button2"
-                android:background="@drawable/pkgbutton_selector"/>
+                android:background="@drawable/pkgbutton_selector"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"/>
 
             <Button
                 android:id="@+id/pkg_button3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="@string/pkg_button3"
-                android:background="@drawable/pkgbutton_selector"/>
+                android:background="@drawable/pkgbutton_selector"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"/>
 
             <Button
                 android:id="@+id/pkg_button4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="@string/pkg_button4"
-                android:background="@drawable/pkgbutton_selector"/>
+                android:background="@drawable/pkgbutton_selector"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"/>
 
             <Button
                 android:id="@+id/pkg_button5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="@string/pkg_button5"
-                android:background="@drawable/pkgbutton_selector"/>
+                android:background="@drawable/pkgbutton_selector"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"/>
 
             <Button
                 android:id="@+id/pkg_button6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="@string/pkg_button6"
-                android:background="@drawable/pkgbutton_selector"/>
+                android:background="@drawable/pkgbutton_selector"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"/>
 
             <Button
                 android:id="@+id/pkg_button7"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="@string/pkg_button7"
-                android:background="@drawable/pkgbutton_selector"/>
+                android:background="@drawable/pkgbutton_selector"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </HorizontalScrollView>
 
@@ -121,11 +160,13 @@
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/price"
-        android:textSize="13sp"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/soft_black"/>
 
     <TextView
         android:id="@+id/price_amount"
@@ -133,9 +174,11 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/price_amount"
-        android:textSize="20sp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price" />
+        app:layout_constraintTop_toBottomOf="@+id/price"
+        android:textColor="@color/soft_black"
+        />
 
     <Button
         android:id="@+id/order_button"
@@ -145,7 +188,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/price_amount"
         android:text="@string/order_now"
-        android:fontFamily="@font/poppins_semibold"/>
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/not_white"
+        android:background="@drawable/button"
+        android:textSize="15dp"
+        android:layout_marginTop="15dp"/>
 
 
 
