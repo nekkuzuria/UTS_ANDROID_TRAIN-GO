@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">UTS_TRAINGO</string>
+    <string name="create_your_account">Create your Account</string>
+    <string name="login_your_account">Login to your Account</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_email_username">Your Email or Username</string>
+    <string name="your_password">Your Password</string>
+    <string name="your_username">Your Username</string>
+    <string name="lets_get">Let\'s Get You Moving</string>
+    <string name="welcome">Welcome</string>
+    <string name="order">Order Ticket</string>
+    <string name="last_order">Your Last Order</string>
+    <string name="price">Price</string>
+    <string name="price_amount">0</string>
+    <string name="order_now">Order Now</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="order_date">"Select Order Date"</string>
+    <string name="pkg_button1">"Add Lunch"</string>
+    <string name="pkg_button2">"Add Blanket"</string>
+    <string name="pkg_button3">"Add Pillow"</string>
+    <string name="pkg_button4">"Choose Window Seat"</string>
+    <string name="pkg_button5">"Choose Front Row"</string>
+    <string name="pkg_button6">"Choose Solo Seat"</string>
+    <string name="pkg_button7">"Select Swivel Chair"</string>
+    <array name="stasiun">
+        <item>Yogyakarta</item>
+        <item>Lempuyangan</item>
+        <item>Brambanan</item>
+        <item>Srowot</item>
+        <item>Klaten</item>
+        <item>Ceper</item>
+        <item>Delanggu</item>
+        <item>Gawok</item>
+        <item>Purwosari</item>
+        <item>Solo Balapan</item>
+    </array>
+    <array name="class_train">
+        <item>Economy</item>
+        <item>Bussiness</item>
+        <item>Executive</item>
+        <item>Luxury</item>
+    </array>
+</resources>

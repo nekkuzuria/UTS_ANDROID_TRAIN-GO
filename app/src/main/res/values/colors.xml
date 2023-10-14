@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="soft_black">#101010</color>
+    <color name="grey">#474747</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="not_white">#F8F8F8</color>
+    <color name="selected_pkgbutton_color">#0B4695</color>
+    <color name="normal_pkgbutton_color">#C1D0E5</color>
+    <color name="main_blue">#0B4695</color>
+    <color name="baby_blue">#7C9CC4</color>
+    <color name="light_blue">#C1D0E5</color>
+    <color name="soft_blue">#557FB5</color>
+    <color name="background">#EDF1F7</color>
+</resources>
