@@ -73,10 +73,6 @@ class RegisterActivity : AppCompatActivity() {
                     startActivity(intentToLogin)
                     finish()
 
-                    emailInput.setText("")
-                    usernameInput.setText("")
-                    passwordInput.setText("")
-                    birthofdateInput.setText("")
                 } else {
                     Toast.makeText(this@RegisterActivity, "Sorry, age must be 15 or older", Toast.LENGTH_SHORT).show()
                 }
