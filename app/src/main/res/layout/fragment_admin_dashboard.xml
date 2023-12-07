@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/traingo_logo"
+        android:layout_width="94dp"
+        android:layout_height="38dp"
+        android:src="@drawable/traingo_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="30dp" />
+
+
+    <TextView
+        android:id="@+id/welcomeAdminTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Admin"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="24sp"
+        android:textColor="@color/soft_black"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/traingo_logo" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ordersCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ticketsCardView"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeAdminTextView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Quantity"
+                android:textColor="@color/soft_black"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_semibold"/>
+
+            <TextView
+                android:id="@+id/ordersCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="100"
+                android:textColor="@color/main_blue"
+                android:textSize="28sp"
+                android:fontFamily="@font/poppins_semibold"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ticketsCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/ordersCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeAdminTextView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ticket Quantity"
+                android:textSize="16sp"
+                android:textColor="@color/soft_black"
+                android:fontFamily="@font/poppins_semibold"/>
+
+            <TextView
+                android:id="@+id/ticketsCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50"
+                android:textSize="28sp"
+                android:textColor="@color/main_blue"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_semibold"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ordersCardView"
+        android:layout_marginTop="20dp"
+        android:background="@color/light_blue"
+        android:elevation="4dp"
+        app:cardCornerRadius="15dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/add_train"
+                    android:textColor="@color/soft_black"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/order_button"
+                    android:layout_width="170dp"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/add_ticket"
+                    android:background="@drawable/button"
+                    android:textColor="@color/not_white"
+                    android:layout_marginTop="10dp"
+                    />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="126dp"
+                android:layout_height="110dp"
+                android:src="@drawable/order_ticket" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

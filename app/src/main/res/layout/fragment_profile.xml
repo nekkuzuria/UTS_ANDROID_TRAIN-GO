@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/background"
+   >
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/not_white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@id/cardViewProfile"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                app:cardCornerRadius="400dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/order_ticket"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Amanda Farliana Setyasari"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/soft_black"
+                android:layout_marginTop="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewProfile" />
+
+
+            <TextView
+                android:id="@+id/textViewNim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="22/499652/SV/21353"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/soft_black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+            <TextView
+                android:id="@+id/textViewRole"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="as User"
+                android:textAlignment="center"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNim" />
+
+            <Button
+                android:id="@+id/buttonLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/logout"
+                android:background="@drawable/button"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewRole"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="80dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

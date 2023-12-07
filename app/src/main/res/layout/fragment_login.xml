@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".LoginFragment"
     android:padding="30dp"
     android:background="@color/background">
 
@@ -11,98 +12,69 @@
         android:id="@+id/traingo_logo"
         android:layout_width="94dp"
         android:layout_height="38dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/traingo_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="40dp"/>
 
     <TextView
         android:id="@+id/loginyouraccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/create_your_account"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/login_your_account"
         android:textColor="@color/soft_black"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/traingo_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/traingo_logo"
+        android:textSize="16sp"/>
 
     <EditText
         android:id="@+id/email_input"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
         android:hint="@string/your_email"
-        android:paddingHorizontal="15dp"
-        android:textSize="15sp"
-        android:fontFamily="@font/poppins_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginyouraccount"
-        android:background="@drawable/edittext"
-        android:textColor="@color/soft_black"/>
-
-    <EditText
-        android:id="@+id/username_input"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Your Username"
         android:paddingHorizontal="20dp"
         android:textSize="15sp"
         android:background="@drawable/edittext"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/poppins_medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_input"
         android:textColor="@color/soft_black"/>
 
     <EditText
         android:id="@+id/password_input"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:fontFamily="@font/poppins_medium"
         android:hint="@string/your_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_input"
         android:inputType="textPassword"
         android:paddingHorizontal="20dp"
         android:textSize="15sp"
         android:background="@drawable/edittext"
         android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_input"
-        android:textColor="@color/soft_black"/>
-
-    <EditText
-        android:id="@+id/birthofdate_input"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:fontFamily="@font/poppins_medium"
-        android:hint="Your Birth Of Date"
-        android:paddingHorizontal="20dp"
-        android:textSize="15sp"
-        android:background="@drawable/edittext"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_input"
-        android:inputType="none"
         android:textColor="@color/soft_black"/>
 
     <Button
-        android:id="@+id/signup_button"
+        android:id="@+id/signin_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:textColor="@color/not_white"
         android:fontFamily="@font/poppins_semibold"
-        android:textSize="15dp"
-        android:text="Sign Up"
+        android:text="@string/sign_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/birthofdate_input"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button"
+        android:textColor="@color/not_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

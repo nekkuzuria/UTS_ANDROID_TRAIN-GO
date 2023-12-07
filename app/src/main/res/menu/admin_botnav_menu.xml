@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:title="Home"
+        android:icon="@drawable/round_home_24"/>
+    <item
+        android:id="@+id/navigation_add_ticket"
+        android:title="Add Ticket"
+        android:icon="@drawable/round_add_circle_outline_24"/>
+    <item
+        android:id="@+id/navigation_traing"
+        android:title="Ticket Item"
+        android:icon="@drawable/round_train_24"/>
+    <item
+        android:id="@+id/navigation_profile"
+        android:title="Profile"
+        android:icon="@drawable/round_account_circle_24"/>
+</menu>

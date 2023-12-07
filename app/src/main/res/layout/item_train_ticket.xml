@@ -1,0 +1,163 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewOrigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Asal          ->        Tujuan"
+            android:textColor="@color/soft_black"
+            android:textSize="18sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewTrainClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Kelas Kereta"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/textViewOrigin"
+            app:layout_constraintTop_toBottomOf="@id/textViewOrigin" />
+
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="40000"
+            android:textColor="@color/soft_black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/textViewOrigin"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTrainClass"
+            android:layout_marginTop="10dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPrice">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/pkg_button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button"
+                    android:clickable="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/pkg_button1"
+                    android:textColor="@color/not_white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/pkg_button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button"
+                    android:clickable="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/pkg_button2"
+                    android:textColor="@color/not_white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/pkg_button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button"
+                    android:clickable="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/pkg_button3"
+                    android:textColor="@color/not_white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/pkg_button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button"
+                    android:clickable="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/pkg_button4"
+                    android:textColor="@color/not_white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/pkg_button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button"
+                    android:clickable="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/pkg_button5"
+                    android:textColor="@color/not_white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/pkg_button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button"
+                    android:clickable="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/pkg_button6"
+                    android:textColor="@color/not_white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/pkg_button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button"
+                    android:clickable="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/pkg_button7"
+                    android:textColor="@color/not_white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+        <Button
+            android:id="@+id/buttonPesan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:text="@string/order"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

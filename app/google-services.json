@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "165023315085",
+    "project_id": "traingo-556a9",
+    "storage_bucket": "traingo-556a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165023315085:android:5c2d6fb41fc9b8590e1ec4",
+        "android_client_info": {
+          "package_name": "com.example.uts_traingo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKYqIeqIgqHYbt_06aIZkNeRrmfaB8S_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
