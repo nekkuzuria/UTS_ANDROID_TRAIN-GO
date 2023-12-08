@@ -1,8 +1,10 @@
 package com.example.uts_traingo
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -48,26 +50,10 @@ class LoginFragment : Fragment() {
         sharedPreferences = requireActivity().getSharedPreferences("LoginStatus", Context.MODE_PRIVATE)
 
         if (isLoggedIn()) {
-            val userRole = sharedPreferences.getString("userRole", "")
-            when (userRole) {
-                "admin" -> {
-                    // Redirect ke halaman admin
-                    // Contoh: requireActivity().supportFragmentManager.beginTransaction()...
-                }
-                "user" -> {
-                    // Redirect ke halaman user
-                    // Contoh: requireActivity().supportFragmentManager.beginTransaction()...
-                }
-                else -> {
-                    // Peran pengguna tidak terdefinisi, tangani sesuai kebutuhan
-                    Toast.makeText(
-                        requireContext(),
-                        "Role is not defined",
-                        Toast.LENGTH_SHORT)
-                }
-            }
-
-            // Contoh: requireActivity().supportFragmentManager.beginTransaction()...
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            requireActivity().finish()
         }
 
         with(binding) {
@@ -95,11 +81,13 @@ class LoginFragment : Fragment() {
                                             val role = document.getString("role")
                                             if (role == "admin") {
                                                 saveLoginStatus(true, "admin")
-                                                // Redirect ke halaman admin
                                             } else {
                                                 saveLoginStatus(true, "user")
-                                                // Redirect ke halaman user
                                             }
+                                            val intent = Intent(requireContext(), MainActivity::class.java)
+                                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                            startActivity(intent)
+                                            requireActivity().finish()
                                         }
                                     }
                             }

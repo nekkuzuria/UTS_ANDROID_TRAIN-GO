@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.uts_traingo.AdminDashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_admin_dashboard">
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_add_ticket"
+        android:name="AdminAddTicketFragment"
+        android:label="Add Ticket"
+        tools:layout="@layout/fragment_admin_add_ticket">
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_train"
+        android:name="ListTrainFragment"
+        android:label="List Train"
+        tools:layout="@layout/fragment_list_train">
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile"/>
+</navigation>
