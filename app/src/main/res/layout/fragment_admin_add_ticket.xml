@@ -52,29 +52,13 @@
         android:layout_marginTop="15dp"
         android:paddingLeft="10dp"/>
 
-    <EditText
-        android:id="@+id/orderdate_input"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/order_date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/class_spinner"
-        android:background="@drawable/edittext"
-        android:layout_marginTop="15dp"
-        android:paddingLeft="12dp"
-        android:fontFamily="@font/poppins_medium"
-        android:textSize="15dp"
-
-        />
-
     <HorizontalScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/orderdate_input"
+        app:layout_constraintTop_toBottomOf="@id/class_spinner"
         android:layout_marginTop="30dp">
 
 
@@ -181,7 +165,7 @@
         />
 
     <Button
-        android:id="@+id/order_button"
+        android:id="@+id/publish_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"

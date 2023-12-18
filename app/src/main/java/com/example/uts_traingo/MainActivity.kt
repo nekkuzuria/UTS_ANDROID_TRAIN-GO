@@ -36,6 +36,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        Create instance of the database
+        val db = Room.databaseBuilder(
+            applicationContext,
+            TrainDatabase::class.java, "train-database"
+        ).build()
 
         with(binding){
             val role = getRoleFromSharedPreferences()
