@@ -1,22 +1,27 @@
+import android.content.Context
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uts_traingo.databinding.ItemTrainTicketBinding
 import com.example.uts_traingo.db.Train
 import android.view.ViewGroup
 import android.view.LayoutInflater
-
-
+import android.view.View
+import android.widget.Button
+import com.example.uts_traingo.R
 
 class TrainAdapter : RecyclerView.Adapter<TrainAdapter.TrainViewHolder>() {
 
-    private var trainList = emptyList<Train>()
+    private var trainList: MutableList<com.example.uts_traingo.Train> = mutableListOf()
+    private var userRole: String = ""
 
-    inner class TrainViewHolder(private val binding: ItemTrainTicketBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(train: Train) {
+    inner class TrainViewHolder(val binding: ItemTrainTicketBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(train: com.example.uts_traingo.Train) {
             binding.apply {
                 asalTextView.text = train.asal
                 tujuanTextView.text = train.tujuan
                 textViewTrainClass.text = train.kelas
                 textViewPrice.text = train.harga.toString()
+
             }
         }
     }
@@ -30,12 +35,23 @@ class TrainAdapter : RecyclerView.Adapter<TrainAdapter.TrainViewHolder>() {
     override fun onBindViewHolder(holder: TrainViewHolder, position: Int) {
         val currentTrain = trainList[position]
         holder.bind(currentTrain)
+
+        if (userRole == "admin") {
+            holder.binding.buttonPesan.visibility = View.GONE // Jika rolenya adalah 'admin', tombol disembunyikan
+        } else {
+            holder.binding.buttonPesan.visibility = View.VISIBLE // Jika bukan 'admin', tombol ditampilkan
+        }
     }
 
     override fun getItemCount(): Int = trainList.size
 
-    fun setData(newList: List<Train>) {
+    fun setData(newList: MutableList<com.example.uts_traingo.Train>, role: String) {
         trainList = newList
+        userRole = role
         notifyDataSetChanged()
+    }
+
+    fun setButtonVisibility(userRole: String) {
+
     }
 }
