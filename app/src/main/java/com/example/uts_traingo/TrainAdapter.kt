@@ -22,6 +22,30 @@ class TrainAdapter : RecyclerView.Adapter<TrainAdapter.TrainViewHolder>() {
                 textViewTrainClass.text = train.kelas
                 textViewPrice.text = train.harga.toString()
 
+                val fasilitasList = train.fasilitas
+                setButtonVisibility(fasilitasList)
+
+            }
+        }
+
+        private fun setButtonVisibility(fasilitasList: MutableList<Boolean>) {
+            val pkgButtons = listOf(
+                binding.pkgButton1,
+                binding.pkgButton2,
+                binding.pkgButton3,
+                binding.pkgButton4,
+                binding.pkgButton5,
+                binding.pkgButton6,
+                binding.pkgButton7
+            )
+
+            fasilitasList.forEachIndexed { index, isEnabled ->
+                if (isEnabled && index < pkgButtons.size) {
+                    pkgButtons[index].visibility = View.VISIBLE
+                }
+                else{
+                    pkgButtons[index].visibility = View.GONE
+                }
             }
         }
     }
