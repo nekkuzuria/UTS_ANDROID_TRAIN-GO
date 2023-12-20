@@ -30,7 +30,7 @@ import kotlinx.coroutines.launch
 class AdminAddTicketFragment : Fragment() {
 
     private lateinit var binding: FragmentAdminAddTicketBinding
-    private val facilitiesList = mutableListOf<String>()
+    val facilitiesList = MutableList<Boolean>(7) {false}
     private var priceLiveData = MutableLiveData<Int>()
 
     override fun onCreateView(
@@ -45,14 +45,6 @@ class AdminAddTicketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-
-            var selectedBtn1 = false
-            var selectedBtn2 = false
-            var selectedBtn3 = false
-            var selectedBtn4 = false
-            var selectedBtn5 = false
-            var selectedBtn6 = false
-            var selectedBtn7 = false
 
 //                adapter spinner
             val stasiunArray = resources.getStringArray(R.array.stasiun)
@@ -84,28 +76,25 @@ class AdminAddTicketFragment : Fragment() {
                     "Luxury" -> newHarga += 30000
                 }
                 // Perbarui harga berdasarkan pemilihan paket
-                if (selectedBtn1) {
+                if (facilitiesList[0]) {
                     newHarga += 10000
                 }
-                if (selectedBtn2) {
+                if (facilitiesList[1]) {
                     newHarga += 7000
                 }
-                if (selectedBtn3) {
+                if (facilitiesList[2]) {
                     newHarga += 6000
                 }
-                if (selectedBtn4) {
+                if (facilitiesList[3]) {
                     newHarga += 12000
                 }
-                if (selectedBtn4) {
+                if (facilitiesList[4]) {
                     newHarga += 2500
                 }
-                if (selectedBtn5) {
+                if (facilitiesList[5]) {
                     newHarga += 14000
                 }
-                if (selectedBtn6) {
-                    newHarga += 2500
-                }
-                if (selectedBtn7) {
+                if (facilitiesList[6]) {
                     newHarga += 15000
                 }
                 priceLiveData.value = newHarga
@@ -135,78 +124,42 @@ class AdminAddTicketFragment : Fragment() {
 
 //            selected package
             pkgButton1.setOnClickListener() {
-                selectedBtn1 = !selectedBtn1
+                facilitiesList[0] = !facilitiesList[0]
                 updateHarga()
-                if (selectedBtn1) {
-                    addFacility(pkgButton1.text.toString())
-                } else {
-                    removeFacility(pkgButton1.text.toString())
-                }
             }
             pkgButton2.setOnClickListener() {
-                selectedBtn2 = !selectedBtn2
+                facilitiesList[1] = !facilitiesList[1]
                 updateHarga()
-                if (selectedBtn1) {
-                    addFacility(pkgButton2.text.toString())
-                } else {
-                    removeFacility(pkgButton2.text.toString())
-                }
             }
             pkgButton3.setOnClickListener() {
-                selectedBtn3 = !selectedBtn3
+                facilitiesList[2] = !facilitiesList[2]
                 updateHarga()
-                if (selectedBtn1) {
-                    addFacility(pkgButton3.text.toString())
-                } else {
-                    removeFacility(pkgButton3.text.toString())
-                }
             }
             pkgButton4.setOnClickListener() {
-                selectedBtn4 = !selectedBtn4
+                facilitiesList[3] = !facilitiesList[3]
                 updateHarga()
-                if (selectedBtn1) {
-                    addFacility(pkgButton4.text.toString())
-                } else {
-                    removeFacility(pkgButton4.text.toString())
-                }
             }
             pkgButton5.setOnClickListener() {
-                selectedBtn5 = !selectedBtn5
+                facilitiesList[4] = !facilitiesList[4]
                 updateHarga()
-                if (selectedBtn1) {
-                    addFacility(pkgButton5.text.toString())
-                } else {
-                    removeFacility(pkgButton5.text.toString())
-                }
             }
             pkgButton6.setOnClickListener() {
-                selectedBtn6 = !selectedBtn6
+                facilitiesList[5] = !facilitiesList[5]
                 updateHarga()
-                if (selectedBtn1) {
-                    addFacility(pkgButton6.text.toString())
-                } else {
-                    removeFacility(pkgButton6.text.toString())
-                }
             }
             pkgButton7.setOnClickListener() {
-                selectedBtn7 = !selectedBtn7
+                facilitiesList[6] = !facilitiesList[6]
                 updateHarga()
-                if (selectedBtn1) {
-                    addFacility(pkgButton7.text.toString())
-                } else {
-                    removeFacility(pkgButton7.text.toString())
-                }
             }
 
 //            Button publish diklik
             publishButton.setOnClickListener() {
-                Toast.makeText(requireActivity(), "Item ditambahkan", Toast.LENGTH_SHORT).show()
                 val asal = asalSpinner.selectedItem.toString()
                 val tujuan = tujuanSpinner.selectedItem.toString()
                 val kelasKereta = classSpinner.selectedItem.toString()
                 val harga = priceAmount.text.toString().toInt()
 
-                val train = Train(asal, tujuan, kelasKereta, ArrayList(facilitiesList), harga)
+                val train = Train(asal, tujuan, kelasKereta, facilitiesList, harga)
 
                 if (isInternetAvailable(requireContext())) {
                     saveToFirebase(train)
@@ -217,15 +170,6 @@ class AdminAddTicketFragment : Fragment() {
         }
     }
 
-    private fun addFacility(facility: String) {
-        if (!facilitiesList.contains(facility)) {
-            facilitiesList.add(facility)
-        }
-    }
-
-    private fun removeFacility(facility: String) {
-        facilitiesList.remove(facility)
-    }
 
     private fun isInternetAvailable(context: Context): Boolean {
         val connectivityManager =

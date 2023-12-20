@@ -12,17 +12,40 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/textViewOrigin"
+            android:id="@+id/asalTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Asal          ->        Tujuan"
+            android:text="Asal"
             android:textColor="@color/soft_black"
             android:textSize="18sp"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/panahTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="         ->        "
+            android:textColor="@color/soft_black"
+            android:textSize="18sp"
+
+            app:layout_constraintStart_toEndOf="@+id/asalTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tujuanTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Tujuan"
+            android:textColor="@color/soft_black"
+            android:textSize="18sp"
+
+            app:layout_constraintStart_toEndOf="@+id/panahTextView"
+            app:layout_constraintTop_toTopOf="parent" />
         <TextView
             android:id="@+id/textViewTrainClass"
             android:layout_width="wrap_content"
@@ -32,8 +55,8 @@
             android:text="Kelas Kereta"
             android:textColor="@color/grey"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@id/textViewOrigin"
-            app:layout_constraintTop_toBottomOf="@id/textViewOrigin" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/asalTextView" />
 
         <TextView
             android:id="@+id/textViewPrice"
@@ -43,7 +66,7 @@
             android:text="40000"
             android:textColor="@color/soft_black"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@id/textViewOrigin"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTrainClass"
             android:layout_marginTop="10dp"/>
 
