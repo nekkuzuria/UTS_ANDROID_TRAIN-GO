@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import com.example.uts_traingo.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class TrainAdapter : RecyclerView.Adapter<TrainAdapter.TrainViewHolder>() {
 
@@ -15,6 +18,48 @@ class TrainAdapter : RecyclerView.Adapter<TrainAdapter.TrainViewHolder>() {
     private var userRole: String = ""
 
     inner class TrainViewHolder(val binding: ItemTrainTicketBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.buttonPesan.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val train = trainList[position]
+
+                    // Mendapatkan referensi Firebase Firestore
+                    val db = FirebaseFirestore.getInstance()
+
+                    // Mendapatkan ID pengguna dari Firebase Authentication
+                    val firebaseAuth = FirebaseAuth.getInstance()
+                    val currentUser = firebaseAuth.currentUser
+                    val userID = currentUser?.uid
+
+                    if (userID != null) {
+                        // Objek data yang akan disimpan ke Firestore
+                        val orderData = hashMapOf(
+                            "idUser" to userID,
+                            "asal" to train.asal,
+                            "tujuan" to train.tujuan,
+                            "harga" to train.harga,
+                            "facilities" to train.fasilitas,
+                            "kelas" to train.kelas
+                        )
+
+                        // Menyimpan data ke koleksi "order" di Firestore
+                        db.collection("order")
+                            .add(orderData)
+                            .addOnSuccessListener { documentReference ->
+                                Log.d("TrainAdapter", "DocumentSnapshot added with ID: ${documentReference.id}")
+                                Toast.makeText(binding.root.context, "Tiket berhasil dibeli", Toast.LENGTH_SHORT).show()
+                            }
+                            .addOnFailureListener { e ->
+                                Log.w("TrainAdapter", "Error adding document", e)
+                                Toast.makeText(binding.root.context, "Error terjadi, tiket gagal dibeli", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+                }
+            }
+        }
+
         fun bind(train: com.example.uts_traingo.Train) {
             binding.apply {
                 asalTextView.text = train.asal
