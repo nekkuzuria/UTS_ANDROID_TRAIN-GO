@@ -33,6 +33,7 @@ class TrainAdapter : RecyclerView.Adapter<TrainAdapter.TrainViewHolder>() {
                     val currentUser = firebaseAuth.currentUser
                     val userID = currentUser?.uid
 
+
                     if (userID != null) {
                         // Objek data yang akan disimpan ke Firestore
                         val orderData = hashMapOf(

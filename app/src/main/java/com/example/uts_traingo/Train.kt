@@ -6,4 +6,7 @@ data class Train(
     val kelas: String,
     val fasilitas: MutableList<Boolean>,
     val harga: Int
-)
+) {
+    // Konstruktor tanpa argumen untuk deserialisasi Firestore
+    constructor() : this("", "", "", mutableListOf(), 0)
+}

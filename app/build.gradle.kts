@@ -1,8 +1,9 @@
-plugins {
+    plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
     id("com.google.devtools.ksp")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -26,6 +27,7 @@ android {
             arg("room.schemaLocation", "$projectDir/schemas")
         }
     }
+
 
     buildTypes {
         release {
