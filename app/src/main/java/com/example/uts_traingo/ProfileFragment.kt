@@ -24,6 +24,13 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
+            val sharedPref = requireActivity().getSharedPreferences("LoginStatus", Context.MODE_PRIVATE)
+            val userRole = sharedPref.getString("userRole", "user") ?: "user"
+
+            if(userRole=="admin"){
+                textViewRole.text = "as Admin"
+            }
+
             buttonLogout.setOnClickListener(){
                 performLogout()
             }

@@ -15,7 +15,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class ListTrainFragment : Fragment() {
     private lateinit var binding: FragmentListTrainBinding
-    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
